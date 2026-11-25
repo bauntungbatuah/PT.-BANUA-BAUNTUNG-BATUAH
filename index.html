@@ -1,393 +1,146 @@
-Put your HTML text <!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PT Banua Bauntung Batuah</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f172a">
+    <title>Desa Banama - Portal Offline</title>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f8fc;
-    color: #152338;
-}
-
-header {
-    background: white;
-    padding: 15px 7%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    box-shadow: 0 2px 10px #00000010;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo img {
-    width: 55px;
-    height: 55px;
-    object-fit: contain;
-}
-
-.logo h3 {
-    color: #075493;
-    font-size: 16px;
-}
-
-.logo p {
-    font-size: 11px;
-    color: gray;
-}
-
-nav a {
-    text-decoration: none;
-    color: #152338;
-    margin: 8px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #075493;
-}
-
-.hero {
-    padding: 80px 7%;
-    background: linear-gradient(135deg, #075493, #071b2c);
-    color: white;
-}
-
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 18px;
-    line-height: 1.7;
-    max-width: 650px;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 14px 25px;
-    background: white;
-    color: #075493;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 8px;
-}
-
-.btn:hover {
-    background: #dbeeff;
-}
-
-section {
-    padding: 65px 7%;
-}
-
-.judul {
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.judul h2 {
-    font-size: 30px;
-    color: #075493;
-    margin-bottom: 10px;
-}
-
-.judul p {
-    color: #667085;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px #00000008;
-    border: 1px solid #e5edf5;
-}
-
-.card h3 {
-    color: #075493;
-    margin-bottom: 12px;
-}
-
-.card p {
-    line-height: 1.7;
-    color: #667085;
-}
-
-.icon {
-    font-size: 35px;
-    margin-bottom: 15px;
-}
-
-.tentang {
-    background: #eaf4ff;
-}
-
-.tentang p {
-    line-height: 1.8;
-    font-size: 16px;
-}
-
-.kontak {
-    background: #075493;
-    color: white;
-    text-align: center;
-}
-
-.kontak h2 {
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.kontak p {
-    line-height: 1.8;
-}
-
-.kontak .btn {
-    background: white;
-    color: #075493;
-}
-
-footer {
-    background: #071b2c;
-    color: white;
-    text-align: center;
-    padding: 25px;
-}
-
-@media(max-width:600px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav {
-        text-align: center;
-    }
-
-    nav a {
-        display: inline-block;
-        font-size: 14px;
-    }
-
-    .hero h1 {
-        font-size: 32px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-}
-</style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-<header>
-    <div class="logo">
-        <img src="logo.png" alt="Logo PT Banua Bauntung Batuah">
-        <div>
-            <h3>PT BANUA BAUNTUNG BATUAH</h3>
-            <p>Jasa & Produk Digital</p>
-        </div>
-    </div>
+    <!-- NAVIGASI -->
+    <nav class="navbar">
+        <a href="#" class="brand">
+            <img src="https://sedangdiluar.netlify.app/logo.png" alt="Logo Desa">
+            <div>
+                <span class="brand-name">BANAMA</span>
+                <small>Portal Layanan Desa</small>
+            </div>
+        </a>
 
-    <nav>
-        <a href="#beranda">Beranda</a>
-        <a href="#layanan">Layanan</a>
-        <a href="#produk">Produk</a>
-        <a href="#tentang">Tentang</a>
-        <a href="#kontak">Kontak</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Buka navigasi">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+            <a href="#beranda" class="nav-link active">Beranda</a>
+            <a href="#status" class="nav-link">Status Server</a>
+            <a href="#kontak" class="nav-link">Kontak</a>
+        </div>
     </nav>
-</header>
 
-<!-- BERANDA -->
-<section class="hero" id="beranda">
-    <h1>Solusi Digital<br>
-    untuk Masa Depan</h1>
+    <!-- HERO -->
+    <main id="beranda" class="main-container">
 
-    <p>
-        PT Banua Bauntung Batuah hadir memberikan
-        layanan dan produk digital yang praktis,
-        modern, kreatif dan mudah diakses untuk
-        mendukung kebutuhan bisnis maupun personal.
-    </p>
+        <div class="clock-pill">
+            <i class="fa-regular fa-clock"></i>
+            <span id="jam-realtime">00:00:00 WITA</span>
+        </div>
 
-    <a href="#layanan" class="btn">
-        Jelajahi Layanan
-    </a>
-</section>
+        <div class="hero-heading">
+            <span class="eyebrow">PORTAL DIGITAL DESA</span>
+            <h1>DESA <span>BANAMA</span></h1>
 
-<!-- LAYANAN -->
-<section id="layanan">
-    <div class="judul">
-        <h2>Layanan Kami</h2>
-        <p>Berbagai solusi untuk kebutuhan digital Anda.</p>
-    </div>
-
-    <div class="grid">
-
-        <div class="card">
-            <div class="icon">💻</div>
-            <h3>Teknologi Informasi</h3>
-            <p>
-                Jasa dan solusi teknologi informasi,
-                komputer, serta kebutuhan digital lainnya.
+            <p class="motto">
+                Tabe Salamat, Lingu Nalatai.<br>
+                Salam Selamat, Kedamaian Bagi Kita Semua.
             </p>
         </div>
 
-        <div class="card">
-            <div class="icon">🎨</div>
-            <h3>Desain Digital</h3>
+        <!-- BALIHO -->
+        <div class="banner-wrapper">
+            <img
+                src="https://sedangdiluar.netlify.app/baliho.jpeg"
+                alt="Baliho Desa Banama"
+                class="banner-image"
+            >
+            <div class="banner-overlay"></div>
+            <div class="banner-caption">
+                <span>PEMERINTAH DESA BANAMA</span>
+                <p>Pelayanan Digital Masyarakat</p>
+            </div>
+        </div>
+
+        <!-- STATUS -->
+        <section id="status" class="glass-panel status-panel">
+
+            <div class="status-top">
+                <div class="status-icon">
+                    <i class="fa-solid fa-server"></i>
+                </div>
+                <span class="status-caption">INFORMASI SISTEM</span>
+            </div>
+
+            <div id="status-label" class="status-label"></div>
+
+            <h2 id="sapaan">Memeriksa Status...</h2>
+
+            <p id="pesan-utama" class="status-message">
+                Memeriksa kondisi layanan.
+            </p>
+
+            <div id="area-countdown" class="countdown-box hidden">
+                <div class="countdown-heading">
+                    <i class="fa-solid fa-hourglass-half"></i>
+                    ESTIMASI LAYANAN AKTIF
+                </div>
+
+                <div id="timer" class="timer">00:00:00</div>
+
+                <p class="countdown-note">
+                    Perkiraan waktu layanan kembali tersedia.
+                </p>
+            </div>
+
+            <div id="kontak" class="contact-area">
+                <a
+                    id="btn-wa"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-wa"
+                >
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>Hubungi Admin Desa</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+                </a>
+            </div>
+
+        </section>
+
+        <!-- FOOTER MOTIF -->
+        <div class="culture-bar">
+            <img
+                src="https://sedangdiluar.netlify.app/motif.png"
+                alt=""
+                class="motif"
+            >
+
             <p>
-                Pembuatan desain grafis, konten promosi,
-                materi branding dan kebutuhan visual.
+                Adil Ka' Talino, Bacuramin Ka' Saruga,
+                Basengat Ka' Jubata
             </p>
         </div>
 
-        <div class="card">
-            <div class="icon">🌐</div>
-            <h3>Pembuatan Website</h3>
-            <p>
-                Website bisnis, website profil perusahaan,
-                landing page dan kebutuhan online.
-            </p>
-        </div>
+    </main>
 
-        <div class="card">
-            <div class="icon">📄</div>
-            <h3>Dokumen Digital</h3>
-            <p>
-                Pengolahan dokumen, administrasi digital,
-                serta bantuan kebutuhan file elektronik.
-            </p>
-        </div>
+    <footer class="footer">
+        <span>© 2026 Pemerintah Desa Banama</span>
+        <span class="footer-dot">•</span>
+        <span>Portal Digital</span>
+    </footer>
 
-    </div>
-</section>
+    <!-- AUDIO -->
+    <audio id="bg-music" loop playsinline preload="auto">
+        <source src="https://sedangdiluar.netlify.app/audio.mp3" type="audio/mpeg">
+    </audio>
 
-<!-- PRODUK -->
-<section id="produk">
-    <div class="judul">
-        <h2>Produk Digital</h2>
-        <p>Produk digital yang praktis dan bermanfaat.</p>
-    </div>
-
-    <div class="grid">
-
-        <div class="card">
-            <div class="icon">📦</div>
-            <h3>Template Digital</h3>
-            <p>
-                Template dokumen, desain, file siap pakai
-                dan berbagai kebutuhan digital.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">📱</div>
-            <h3>Produk Online</h3>
-            <p>
-                Produk berbasis digital yang membantu
-                aktivitas, pekerjaan dan produktivitas.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">⚙️</div>
-            <h3>Tools Digital</h3>
-            <p>
-                Perangkat bantu digital dan solusi
-                teknologi untuk kebutuhan pengguna.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">✨</div>
-            <h3>Produk Lainnya</h3>
-            <p>
-                Berbagai produk digital lainnya yang
-                akan terus dikembangkan perusahaan.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<!-- TENTANG -->
-<section class="tentang" id="tentang">
-    <div class="judul">
-        <h2>Tentang Perusahaan</h2>
-    </div>
-
-    <p>
-        PT Banua Bauntung Batuah merupakan perusahaan
-        yang bergerak dalam bidang layanan dan produk
-        digital, khususnya teknologi informasi dan
-        jasa komputer lainnya.
-    </p>
-
-    <br>
-
-    <p>
-        Kami berkomitmen untuk memberikan layanan
-        yang praktis, inovatif, fleksibel dan
-        berorientasi pada kebutuhan pelanggan.
-        Melalui pemanfaatan teknologi, kami ingin
-        membantu masyarakat, pelaku usaha dan
-        berbagai pihak dalam menjalankan aktivitas
-        secara lebih efisien.
-    </p>
-</section>
-
-<!-- KONTAK -->
-<section class="kontak" id="kontak">
-    <h2>Hubungi Kami</h2>
-
-    <p>
-        Tertarik dengan layanan atau produk digital kami?<br>
-        Silakan hubungi PT Banua Bauntung Batuah.
-    </p>
-
-    <!-- GANTI NOMOR WHATSAPP DI LINK DI BAWAH -->
-    <a href="https://wa.me/6281234567890"
-       class="btn">
-       Hubungi WhatsApp
-    </a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <p>
-        &copy; 2026 PT Banua Bauntung Batuah
-    </p>
-    <p>
-        Jasa & Produk Digital
-    </p>
-</footer>
+    <script src="script.js"></script>
 
 </body>
 </html>
